@@ -30,13 +30,13 @@ Param2 := textY
 Param3 := textX
 Param4 := textY
 Param3 *= 1.40
-Param4 *= 1.5
+Param4 *= 1.25
 Param3 := floor(Param3)
 Param4 := floor(Param4)
 Params := "" . Param1 . " " . Param2 . " " . Param3 . " " . Param4 . ""
 Params := """" . Params . """"
 temp = %clipboard%
-RunWait "Capture2Text_v4.5.1_64bit\Capture2Text_CLI.exe" --clipboard --screen-rect %Params%
+RunWait, "Capture2Text_v4.5.1_64bit\Capture2Text_CLI.exe" --clipboard --output-format "${capture}" --screen-rect %Params%, , Hide
 Pizza = %clipboard%
 clipboard = %temp%
 temp =
@@ -46,13 +46,13 @@ if (Pizza = "CHOCOLATE SPRINKLE PIZZA")
 {
     Sprinkles()
 }
-else if (Pizza = "PINK MARSHMELLOW JELLY PIZZA")
+else if (Pizza = "PINK MARSHMALLOW JELLY PIZZA")
 {
     Sprinkles()
     Marshmellows(2)
     Jellybeans(2)
 }
-else if (Pizza = "MARSHMELLOW JELLY PIZZA")
+else if (Pizza = "MARSHMALLOW JELLY PIZZA")
 {
     Sprinkles()
     Marshmellows(2)
@@ -71,7 +71,7 @@ else if (Pizza = "PINK SUGAR PIZZA")
     Marshmellows(1)
     Jellybeans(1)
 }
-else if (Pizza = "PINK MARSHMELLOW CHIP PIZZA")
+else if (Pizza = "PINK MARSHMALLOW CHIP PIZZA")
 {
     Sprinkles()
     Chocolates(2)
@@ -87,13 +87,13 @@ else if (Pizza = "PINK JELLY BEAN PIZZA")
     Sprinkles()
     Jellybeans(5)
 }
-else if (Pizza = "MARSHMELLOW CHIP PIZZA")
+else if (Pizza = "MARSHMALLOW CHIP PIZZA")
 {
     Sprinkles()
     Chocolates(2)
     Marshmellows(2)
 }
-else if (Pizza = "MARSHMELLOW PIZZA")
+else if (Pizza = "MARSHMALLOW PIZZA")
 {
     Sprinkles()
     Marshmellows(5)
@@ -114,10 +114,34 @@ else if (Pizza = "PINK LIQUORICE-CHIP PIZZA")
     Liquorice(2)
     Chocolates(2)
 }
-else if (Pizza = "PINK MARSHMELLOW PIZZA")
+else if (Pizza = "PINK MARSHMALLOW PIZZA")
 {
     Sprinkles()
     Marshmellows(5)
+}
+else if (Pizza = "PINK LIQUORICE MARSHMALLOW PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Marshmellows(2)
+}
+else if (Pizza = "JELLY CHIP PIZZA")
+{
+  Sprinkles()
+  Chocolates(2)
+  Jellybeans(2)
+}
+else if (Pizza = "LIQUORICE JELLY PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Jellybeans(2)
+}
+else if (Pizza = "LIQUORICE MARSHMALLOW PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Marshmellows(2)
 }
 else
 {
@@ -128,8 +152,6 @@ else
 ;Ingredients
 Sprinkles()
 {
-    global currentX
-    global currentY
     global limitY
     global SprinkleX
     global SprinkleY
@@ -138,12 +160,10 @@ Sprinkles()
 }
 Liquorice(count)
 {
-    global currentX
-    global currentY
     global limitY
     global LiquX
     global LiquY
-    Loop, count
+    Loop, %count%
     {
         PixelSearch, currentX, currentY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xC68600, 0, Fast RGB
         MouseClickDrag, Left, LiquX, LiquY, currentX + 100, currentY + 100
@@ -151,12 +171,10 @@ Liquorice(count)
 }
 Chocolates(count)
 {
-    global currentX
-    global currentY
     global limitY
     global ChocoX
-    global CocoY
-    Loop, count
+    global ChocoY
+    Loop, %count%
     {
         PixelSearch, currentX, currentY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xC68600, 0, Fast RGB
         MouseClickDrag, Left, ChocoX, ChocoY, currentX + 100, currentY + 100
@@ -164,12 +182,10 @@ Chocolates(count)
 }
 Marshmellows(count)
 {
-    global currentX
-    global currentY
     global limitY
     global MelloX
     global MelloY
-    Loop, count
+    Loop, %count%
     {
         PixelSearch, currentX, currentY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xC68600, 0, Fast RGB
         MouseClickDrag, Left, MelloX, MelloY, currentX + 100, currentY + 100
@@ -177,12 +193,10 @@ Marshmellows(count)
 }
 Jellybeans(count)
 {
-    global currentX
-    global currentY
     global limitY
     global BeanX
     global BeanY
-    Loop, count
+    Loop, %count%
     {
         PixelSearch, currentX, currentY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xC68600, 0, Fast RGB
         MouseClickDrag, Left, BeanX, BeanY, currentX + 100, currentY + 100
