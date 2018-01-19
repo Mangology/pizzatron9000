@@ -3,17 +3,18 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-+o::
+Esc::
 MsgBox, Bye
 ExitApp
 return
 
-+p::
++LButton::
 ;Set Mode
 SendMode Event
 CoordMode, Mouse, Relative
 CoordMode, Pixel, Relative
 CoordMode, Tooltip,Relative
+SetDefaultMouseSpeed, 1
 
 ;Set Storage
 PixelSearch, textX, textY, 0, 0, A_ScreenWidth, A_ScreenHeight, 0x003366, 0, Fast RGB
@@ -29,8 +30,8 @@ Param1 := textX
 Param2 := textY
 Param3 := textX
 Param4 := textY
-Param3 *= 1.40
-Param4 *= 1.25
+Param3 *= 1.4
+Param4 *= 1.4
 Param3 := floor(Param3)
 Param4 := floor(Param4)
 Params := "" . Param1 . " " . Param2 . " " . Param3 . " " . Param4 . ""
@@ -46,13 +47,29 @@ if (Pizza = "CHOCOLATE SPRINKLE PIZZA")
 {
     Sprinkles()
 }
+else if (Pizza = "PINK ICING SPRINKLE")
+{
+    Sprinkles()
+}
 else if (Pizza = "PINK MARSHMALLOW JELLY PIZZA")
 {
     Sprinkles()
     Marshmellows(2)
     Jellybeans(2)
 }
+else if (Pizza = "PINK MARSHMALLOW JELLV PIZZA")
+{
+    Sprinkles()
+    Marshmellows(2)
+    Jellybeans(2)
+}
 else if (Pizza = "MARSHMALLOW JELLY PIZZA")
+{
+    Sprinkles()
+    Marshmellows(2)
+    Jellybeans(2)
+}
+else if (Pizza = "MARSHMALLOW JELLV PIZZA")
 {
     Sprinkles()
     Marshmellows(2)
@@ -82,7 +99,17 @@ else if (Pizza = "JELLY BEAN PIZZA")
     Sprinkles()
     Jellybeans(5)
 }
+else if (Pizza = "JELLV BEAN PIZZA")
+{
+    Sprinkles()
+    Jellybeans(5)
+}
 else if (Pizza = "PINK JELLY BEAN PIZZA")
+{
+    Sprinkles()
+    Jellybeans(5)
+}
+else if (Pizza = "PINK JELLV BEAN PIZZA")
 {
     Sprinkles()
     Jellybeans(5)
@@ -103,12 +130,40 @@ else if (Pizza = "LIQUORICE PIZZA")
     Sprinkles()
     Liquorice(5)
 }
+else if (Pizza = "LIQUORIGE PIZZA")
+{
+    Sprinkles()
+    Liquorice(5)
+}
 else if (Pizza = "PINK LIQUORICE PIZZA")
 {
     Sprinkles()
     Liquorice(5)
 }
+else if (Pizza = "PINK LIQUORIGE PIZZA")
+{
+    Sprinkles()
+    Liquorice(5)
+}
+else if (Pizza = "LIQUORICE-CHIP PIZZA")
+{
+    Sprinkles()
+    Liquorice(2)
+    Chocolates(2)
+}
+else if (Pizza = "LIQUORICE-GHIP PIZZA")
+{
+    Sprinkles()
+    Liquorice(2)
+    Chocolates(2)
+}
 else if (Pizza = "PINK LIQUORICE-CHIP PIZZA")
+{
+    Sprinkles()
+    Liquorice(2)
+    Chocolates(2)
+}
+else if (Pizza = "PINK LIQUORIGE-CHIP PIZZA")
 {
     Sprinkles()
     Liquorice(2)
@@ -125,10 +180,52 @@ else if (Pizza = "PINK LIQUORICE MARSHMALLOW PIZZA")
   Liquorice(2)
   Marshmellows(2)
 }
+else if (Pizza = "PINK LIQUORIGE MARSHMALLOW PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Marshmellows(2)
+}
 else if (Pizza = "JELLY CHIP PIZZA")
 {
   Sprinkles()
   Chocolates(2)
+  Jellybeans(2)
+}
+else if (Pizza = "JELLV CHIP PIZZA")
+{
+  Sprinkles()
+  Chocolates(2)
+  Jellybeans(2)
+}
+else if (Pizza = "PINK JELLV CHIP PIZZA")
+{
+  Sprinkles()
+  Chocolates(2)
+  Jellybeans(2)
+}
+else if (Pizza = "PINK JELLY CHIP PIZZA")
+{
+  Sprinkles()
+  Chocolates(2)
+  Jellybeans(2)
+}
+else if (Pizza = "PINK LIQUORIGE JELLY PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Jellybeans(2)
+}
+else if (Pizza = "PINK LIQUORICE JELLY PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Jellybeans(2)
+}
+else if (Pizza = "LIQUORIGE JELLY PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
   Jellybeans(2)
 }
 else if (Pizza = "LIQUORICE JELLY PIZZA")
@@ -143,9 +240,27 @@ else if (Pizza = "LIQUORICE MARSHMALLOW PIZZA")
   Liquorice(2)
   Marshmellows(2)
 }
-else
+else if (Pizza = "LIQUORIGE MARSHMALLOW PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Marshmellows(2)
+}
+else if (Pizza = "CHOCOLATE SUGAR PIZZA")
 {
     Sprinkles()
+    Liquorice(1)
+    Chocolates(1)
+    Marshmellows(1)
+    Jellybeans(1)
+}
+else if (Pizza = "CHOCOLATE PIZZA")
+{
+    Sprinkles()
+    Chocolates(5)
+}
+else
+{
     MsgBox, %Pizza%
 }
 
