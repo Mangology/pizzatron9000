@@ -22,7 +22,8 @@ PixelSearch, limitX, limitY, 0, 0, A_ScreenWidth, A_ScreenHeight, 0xFFCC00, 0, F
 PixelSearch, SprinkleX, SprinkleY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xFF9900, 0, Fast RGB
 PixelSearch, LiquX, LiquY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xC40036, 0, Fast RGB
 PixelSearch, ChocoX, ChocoY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xF6C1A1, 0, Fast RGB
-PixelSearch, MelloX, MelloY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xE6E6E6, 0, Fast RGB
+MelloX := (ChocoX + BeanX) / 2
+MelloY := ChocoY
 PixelSearch, BeanX, BeanY, 0, limitY, A_ScreenWidth, A_ScreenHeight, 0xFFFFAD, 0, Fast RGB
 
 ;Read Recipe
