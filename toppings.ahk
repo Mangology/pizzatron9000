@@ -158,6 +158,12 @@ else if (Pizza = "LIQUORICE-GHIP PIZZA")
     Liquorice(2)
     Chocolates(2)
 }
+else if (Pizza = "LIQUORIGE-GHIP PIZZA")
+{
+    Sprinkles()
+    Liquorice(2)
+    Chocolates(2)
+}
 else if (Pizza = "PINK LIQUORICE-CHIP PIZZA")
 {
     Sprinkles()
@@ -165,6 +171,12 @@ else if (Pizza = "PINK LIQUORICE-CHIP PIZZA")
     Chocolates(2)
 }
 else if (Pizza = "PINK LIQUORIGE-CHIP PIZZA")
+{
+    Sprinkles()
+    Liquorice(2)
+    Chocolates(2)
+}
+else if (Pizza = "PINK LIQUORIGE-GHIP PIZZA")
 {
     Sprinkles()
     Liquorice(2)
@@ -223,7 +235,19 @@ else if (Pizza = "PINK LIQUORICE JELLY PIZZA")
   Liquorice(2)
   Jellybeans(2)
 }
+else if (Pizza = "PINK LIQUORIGE JELLV PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Jellybeans(2)
+}
 else if (Pizza = "LIQUORIGE JELLY PIZZA")
+{
+  Sprinkles()
+  Liquorice(2)
+  Jellybeans(2)
+}
+else if (Pizza = "LIQUORIGE JELLV PIZZA")
 {
   Sprinkles()
   Liquorice(2)
